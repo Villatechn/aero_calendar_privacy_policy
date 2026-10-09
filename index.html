@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aero Calendar — Política de Privacidad / Privacy Policy</title>
+  <link rel="icon" type="image/png" href="icon.png">
+  <style>
+    :root {
+      --aero-blue: #0096C7;
+      --aero-cyan: #48CAE4;
+      --aero-navy: #023E8A;
+      --sky-top: #E0F7FA;
+      --sky-mid: #B0E9F2;
+      --sky-bottom: #80DEEA;
+      --glass-bg: rgba(255, 255, 255, 0.78);
+      --glass-border: rgba(255, 255, 255, 0.95);
+      --glass-shadow: 0 16px 40px rgba(0, 119, 182, 0.18), 0 4px 12px rgba(0, 0, 0, 0.05);
+      --text-main: #0B2545;
+      --text-muted: #4A6B82;
+      --badge-bg: rgba(0, 150, 199, 0.12);
+      --badge-text: #0077B6;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text-main);
+      background: linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 40%, var(--sky-bottom) 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 32px 16px 64px;
+      position: relative;
+      overflow-x: hidden;
+      line-height: 1.65;
+    }
+
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2) 60%, rgba(72, 202, 228, 0.4) 100%);
+      box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.9), 0 4px 10px rgba(0, 119, 182, 0.15);
+      pointer-events: none;
+      animation: floatUp 16s infinite ease-in-out;
+      opacity: 0.65;
+      z-index: 0;
+    }
+
+    .bubble:nth-child(1) { width: 90px; height: 90px; left: 8%; bottom: -100px; animation-duration: 18s; }
+    .bubble:nth-child(2) { width: 50px; height: 50px; left: 85%; bottom: -60px; animation-duration: 14s; animation-delay: 2s; }
+    .bubble:nth-child(3) { width: 70px; height: 70px; left: 22%; bottom: -80px; animation-duration: 20s; animation-delay: 5s; }
+    .bubble:nth-child(4) { width: 40px; height: 40px; left: 70%; bottom: -50px; animation-duration: 16s; animation-delay: 7s; }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) translateX(0) scale(1);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.7;
+      }
+      50% {
+        transform: translateY(-50vh) translateX(25px) scale(1.05);
+      }
+      90% {
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(-110vh) translateX(-20px) scale(0.95);
+        opacity: 0;
+      }
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 860px;
+      background: var(--glass-bg);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1.5px solid var(--glass-border);
+      border-radius: 28px;
+      box-shadow: var(--glass-shadow);
+      padding: 44px 40px;
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 28px 20px;
+        border-radius: 20px;
+      }
+    }
+
+    .header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 32px;
+      position: relative;
+    }
+
+    .app-icon {
+      width: 96px;
+      height: 96px;
+      border-radius: 22px;
+      box-shadow: 0 10px 24px rgba(0, 119, 182, 0.25), 0 2px 6px rgba(0, 0, 0, 0.08);
+      margin-bottom: 16px;
+      border: 2px solid rgba(255, 255, 255, 0.9);
+      background: #E0F7FA;
+    }
+
+    .title {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--aero-navy);
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 16px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(224, 247, 250, 0.9));
+      border: 1.2px solid rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 8px rgba(0, 119, 182, 0.12);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--aero-blue);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .lang-switcher {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin: 24px 0 32px;
+      background: rgba(255, 255, 255, 0.6);
+      padding: 4px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      padding: 8px 20px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all 0.2s ease;
+    }
+
+    .lang-btn.active {
+      background: linear-gradient(180deg, #00B4D8, #0077B6);
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(0, 119, 182, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.5);
+    }
+
+    .policy-content {
+      display: none;
+    }
+
+    .policy-content.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .policy-section {
+      background: rgba(255, 255, 255, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      border-radius: 18px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0, 119, 182, 0.05);
+    }
+
+    .section-title {
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: var(--aero-navy);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .section-icon {
+      font-size: 1.25rem;
+    }
+
+    .policy-section p {
+      margin-bottom: 10px;
+      font-size: 0.96rem;
+      color: #1F3A52;
+    }
+
+    .policy-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .policy-section ul {
+      margin: 8px 0 12px 24px;
+      color: #1F3A52;
+      font-size: 0.95rem;
+    }
+
+    .policy-section li {
+      margin-bottom: 6px;
+    }
+
+    .highlight-card {
+      background: linear-gradient(135deg, rgba(224, 247, 250, 0.95), rgba(255, 255, 255, 0.9));
+      border: 1.5px solid rgba(72, 202, 228, 0.5);
+      border-radius: 16px;
+      padding: 16px 20px;
+      margin: 14px 0;
+    }
+
+    .highlight-card strong {
+      color: var(--aero-blue);
+    }
+
+    .footer {
+      margin-top: 36px;
+      text-align: center;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(255, 255, 255, 0.7);
+      padding-top: 24px;
+    }
+
+    .footer a {
+      color: var(--aero-blue);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+        padding: 0;
+      }
+      .bubble, .lang-switcher {
+        display: none;
+      }
+      .container {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+
+  <main class="container">
+    <header class="header">
+      <img src="icon.png" alt="Aero Calendar Icon" class="app-icon">
+      <h1 class="title">Aero Calendar</h1>
+      <p class="subtitle">Desarrollado por <strong>VillaTechn</strong> · <a href="https://jvillatech.com" target="_blank" rel="noopener noreferrer" style="color: var(--aero-blue); text-decoration: none;">jvillatech.com</a></p>
+      <div class="pill-badge">
+        <span>💧</span> 100% Offline-First · Zero Data Collection
+      </div>
+    </header>
+
+    <div class="lang-switcher">
+      <button type="button" class="lang-btn active" id="btn-es" onclick="switchLang('es')">Español</button>
+      <button type="button" class="lang-btn" id="btn-en" onclick="switchLang('en')">English</button>
+    </div>
+
+    <!-- SECCIÓN EN ESPAÑOL -->
+    <article id="content-es" class="policy-content active">
+      <div class="policy-section">
+        <h2 class="section-title"><span class="section-icon">🛡️</span> 1. Resumen y Principio Fundamental</h2>
+        <p>
+          En <strong>VillaTechn</strong> creemos firmemente en la soberanía y la privacidad del usuario. 
+          <strong>Aero Calendar</strong> es una aplicación de calendario y gestión de tareas construida bajo la filosofía <strong>100% Offline-First</strong> y <strong>Privacidad por Diseño (Privacy by Design)</strong>.
+        </p>
+        <div class="highlight-card">
+          <p><strong>Declaración Principal:</strong> Aero Calendar <strong>NO recopila, NO almacena externamente, NO comparte y NO vende</strong> ningún dato de identificación personal, información de uso o contenido generado por el usuario.</p>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-title"><span class="section-icon">🚫</span> 2. Información que NO Recopilamos</h2>
+        <p>Aero Calendar no requiere registro ni inicio de sesión. Por diseño, la aplicación no tiene acceso ni recopila:</p>
+        <ul>
+          <li><strong>Datos Personales:</strong> Nombre, dirección de correo electrónico, números de teléfono o identificadores gubernamentales.</li>
+          <li><strong>Ubicación Geográfica:</strong> No se accede ni se rastrea tu ubicación GPS ni la dirección IP.</li>
+          <li><strong>Contactos y Archivos Multimedia:</strong> No se lee la libreta de contactos, galería de fotos, cámara ni micrófono.</li>
+          <li><strong>Datos Financieros:</strong> La aplicación es completamente gratuita y no integra pasarelas de pago ni compras in-app.</li>
+          <li><strong>Identificadores de Publicidad:</strong> No se utiliza el Google Advertising ID (AAID) ni cookies de seguimiento.</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-title"><span class="section-icon">💾</span> 3. Almacenamiento Estrictamente Local en tu Dispositivo</h2>
+        <p>
+          Toda la información que creas dentro de la aplicación permanece exclusivamente dentro del almacenamiento interno privado de tu dispositivo:
+        </p>
+        <ul>
+          <li><strong>Agenda y Tareas (To-Do):</strong> Los títulos de tus tareas, descripciones, notas, prioridades y fechas programadas se guardan de forma local mediante <code>SharedPreferences</code> de Android.</li>
+          <li><strong>Preferencias Visuales:</strong> Tu selección de tema Frutiger Aero (Aqua Clásico, Eco Naturaleza, Sunset Twilight o Aurora Nocturna) y tu idioma preferido se guardan en el dispositivo.</li>
+        </ul>
+        <p>Esta información <strong>nunca se transmite a través de internet ni se sincroniza con servidores externos</strong>.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-title"><span class="section-icon">🔌</span> 4. Sin Conexión a Internet ni Servidores Remotos</h2>
+        <p>
+          Aero Calendar funciona de manera <strong>completamente autónoma y sin conexión a internet</strong>. 
+          La aplicación no realiza solicitudes de red (HTTP/HTTPS), no consulta APIs en la nube y no establece conexiones con servidores de terceros.
+        </p>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-title"><span class="section-icon">🧩</span> 5. Ausencia de Analíticas y Rastreadores de Terceros</h2>
+        <p>
+          Para garantizar una experiencia limpia y respetuosa:
+        </p>
+        <ul>
+          <li><strong>Cero Redes de Anuncios:</strong> La app no incluye Google AdMob, Unity Ads, Facebook Audience Network ni ninguna otra red publicitaria.</li>
+          <li><strong>Cero SDKs de Analítica:</strong> No integramos Google Analytics, Firebase Analytics, Crashlytics con telemetría ni librerías de seguimiento conductual.</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-title"><span class="section-icon">👶</span> 6. Privacidad Infantil (COPPA y Política de Familias de Google Play)</h2>
+        <p>
+          Aero Calendar es apto para usuarios de todas las edades. Al no recopilar, procesar ni transmitir ningún tipo de dato personal, cumplimos plenamente con la ley de protección de la privacidad infantil en línea (<strong>COPPA</strong>) y con los estándares del programa Familias de Google Play. No recopilamos conscientemente datos de niños menores de 13 años (ni de ningún otro grupo etario).
+        </p>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-title"><span class="section-icon">🗑️</span> 7. Retención, Control y Eliminación Total de Datos</h2>
+        <p>
+          Tú posees el control absoluto e irrevocable sobre tus datos:
+        </p>
+        <ul>
+          <li><strong>Eliminación Individual:</strong> Puedes editar o borrar cualquier tarea o nota directamente desde la interfaz del calendario en cualquier momento.</li>
+          <li><strong>Eliminación Total:</strong> Puedes borrar todos los datos de la app yendo a <em>Ajustes de Android &gt; Aplicaciones &gt; Aero Calendar &gt; Almacenamiento &gt; Borrar datos</em>, o simplemente desinstalando la aplicación. Esta acción destruye permanentemente el 100% de la información local sin dejar copias residuales.</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-title"><span class="section-icon">📱</span> 8. Permisos del Sistema Operativo</h2>
+        <p>
+          Aero Calendar no solicita permisos sensibles o invasivos en Android. Funciona dentro de los límites estrictos del sandbox del sistema operativo sin requerir permisos de cámara, micrófono, almacenamiento externo compartido ni lectura de estado del teléfono.
+        </p>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-title"><span class="section-icon">✉️</span> 9. Contacto y Soporte</h2>
+        <p>
+          Si tienes preguntas, sugerencias o inquietudes sobre esta Política de Privacidad o sobre el funcionamiento de Aero Calendar, puedes contactarnos en:
+        </p>
+        <ul>
+          <li><strong>Desarrollador:</strong> VillaTechn</li>
+          <li><strong>Sitio Web Oficial:</strong> <a href="https://jvillatech.com" target="_blank" rel="noopener noreferrer">https://jvillatech.com</a></li>
+          <li><strong>Identificador de la App:</strong> <code>com.villatechn.aero_calendar</code></li>
+          <li><strong>Correo de Contacto:</strong> <a href="mailto:soporte@jvillatech.com">soporte@jvillatech.com</a></li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-title"><span class="section-icon">📅</span> 10. Fecha de Entrada en Vigor y Modificaciones</h2>
+        <p>
+          Esta política entra en vigor el <strong>3 de Octubre de 2026</strong>. Si en el futuro se incorpora alguna característica que modifique el tratamiento de datos, esta página será actualizada oportunamente indicando la nueva fecha de revisión.
+        </p>
+      </div>
+    </article>
+
+    <!-- SECCIÓN EN INGLÉS -->
+    <article id="content-en" class="policy-content">
+      <div class="policy-section">
+        <h2 class="section-title"><span class="section-icon">🛡️</span> 1. Overview & Core Philosophy</h2>
+        <p>
+          At <strong>VillaTechn</strong>, we strongly believe in user sovereignty and digital privacy. 
+          <strong>Aero Calendar</strong> is an offline calendar and task management application built under the <strong>100% Offline-First</strong> and <strong>Privacy by Design</strong> principles.
+        </p>
+        <div class="highlight-card">
+          <p><strong>Core Statement:</strong> Aero Calendar <strong>DOES NOT collect, store externally, share, or sell</strong> any personally identifiable information, usage analytics, or user-generated content.</p>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-title"><span class="section-icon">🚫</span> 2. Information We DO NOT Collect</h2>
+        <p>Aero Calendar requires no user account or login. By design, the application does not access or collect:</p>
+        <ul>
+          <li><strong>Personal Data:</strong> Name, email address, phone numbers, or government IDs.</li>
+          <li><strong>Geographic Location:</strong> We never access GPS location or monitor IP addresses.</li>
+          <li><strong>Contacts & Media:</strong> We do not access contacts, photo library, camera, or microphone.</li>
+          <li><strong>Financial Information:</strong> The application is 100% free with no in-app purchases or payment processing.</li>
+          <li><strong>Advertising Identifiers:</strong> We do not read Google Advertising IDs (AAID) or tracking cookies.</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-title"><span class="section-icon">💾</span> 3. Strictly Local On-Device Storage</h2>
+        <p>
+          All information you create within the app remains exclusively stored in your device's private local sandboxed storage:
+        </p>
+        <ul>
+          <li><strong>Calendar & Tasks (To-Do):</strong> Task titles, descriptions, notes, priorities, and dates are stored locally via Android <code>SharedPreferences</code>.</li>
+          <li><strong>Visual Preferences:</strong> Your selected Frutiger Aero theme and language preference are stored locally on the device.</li>
+        </ul>
+        <p>This data is <strong>never transmitted over the internet or synchronized with remote servers</strong>.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-title"><span class="section-icon">🔌</span> 4. No Internet Connection or Remote Servers</h2>
+        <p>
+          Aero Calendar operates <strong>completely offline and autonomously</strong>. 
+          The application makes zero network requests (HTTP/HTTPS), contacts no cloud APIs, and communicates with no external backends.
+        </p>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-title"><span class="section-icon">🧩</span> 5. No Third-Party Analytics or Trackers</h2>
+        <p>
+          To maintain an authentic, respectful, and distraction-free user experience:
+        </p>
+        <ul>
+          <li><strong>Zero Ad Networks:</strong> The app contains no Google AdMob, Unity Ads, Facebook Audience Network, or any advertising SDKs.</li>
+          <li><strong>Zero Analytics SDKs:</strong> We do not integrate Google Analytics, Firebase Analytics, Crashlytics telemetry, or tracking libraries.</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-title"><span class="section-icon">👶</span> 6. Children's Privacy (COPPA & Google Play Families Policy)</h2>
+        <p>
+          Aero Calendar is appropriate for users of all ages. Because we do not collect, process, or transmit any personal data, we fully comply with the Children's Online Privacy Protection Act (<strong>COPPA</strong>) and Google Play Families Policy requirements. We do not knowingly collect information from children under 13 (or any other age group).
+        </p>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-title"><span class="section-icon">🗑️</span> 7. Data Retention, Control & Deletion</h2>
+        <p>
+          You have complete, irrevocable ownership of your data at all times:
+        </p>
+        <ul>
+          <li><strong>Individual Deletion:</strong> You can edit or delete any task or note directly within the app interface at any time.</li>
+          <li><strong>Complete Deletion:</strong> You can wipe all local application data by navigating to <em>Android Settings &gt; Apps &gt; Aero Calendar &gt; Storage &gt; Clear Data</em>, or by uninstalling the application. This immediately and permanently deletes 100% of stored data.</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-title"><span class="section-icon">📱</span> 8. Operating System Permissions</h2>
+        <p>
+          Aero Calendar requests no sensitive or invasive Android permissions. It operates strictly within the standard OS sandbox without requiring camera, microphone, shared external storage, or phone state permissions.
+        </p>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-title"><span class="section-icon">✉️</span> 9. Contact & Support</h2>
+        <p>
+          If you have questions, feedback, or inquiries regarding this Privacy Policy or Aero Calendar, please contact us at:
+        </p>
+        <ul>
+          <li><strong>Developer:</strong> VillaTechn</li>
+          <li><strong>Official Website:</strong> <a href="https://jvillatech.com" target="_blank" rel="noopener noreferrer">https://jvillatech.com</a></li>
+          <li><strong>Application ID:</strong> <code>com.villatechn.aero_calendar</code></li>
+          <li><strong>Support Email:</strong> <a href="mailto:soporte@jvillatech.com">soporte@jvillatech.com</a></li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-title"><span class="section-icon">📅</span> 10. Effective Date & Changes</h2>
+        <p>
+          This policy is effective as of <strong>October 3, 2026</strong>. If future features modify data handling, this document will be updated promptly with a new revision date.
+        </p>
+      </div>
+    </article>
+
+    <footer class="footer">
+      <p>&copy; 2026 <strong>VillaTechn</strong> · Aero Calendar. Todos los derechos reservados / All rights reserved.</p>
+      <p style="margin-top: 6px;">
+        <a href="https://jvillatech.com" target="_blank" rel="noopener noreferrer">jvillatech.com</a> · 
+        <a href="mailto:soporte@jvillatech.com">soporte@jvillatech.com</a>
+      </p>
+    </footer>
+  </main>
+
+  <script>
+    function switchLang(lang) {
+      const btnEs = document.getElementById('btn-es');
+      const btnEn = document.getElementById('btn-en');
+      const contentEs = document.getElementById('content-es');
+      const contentEn = document.getElementById('content-en');
+
+      if (lang === 'en') {
+        btnEs.classList.remove('active');
+        btnEn.classList.add('active');
+        contentEs.classList.remove('active');
+        contentEn.classList.add('active');
+        document.documentElement.lang = 'en';
+      } else {
+        btnEn.classList.remove('active');
+        btnEs.classList.add('active');
+        contentEn.classList.remove('active');
+        contentEs.classList.add('active');
+        document.documentElement.lang = 'es';
+      }
+    }
+  </script>
+</body>
+</html>
